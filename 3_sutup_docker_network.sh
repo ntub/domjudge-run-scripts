@@ -1,3 +1,3 @@
 set -e
 
-docker network create --internal domjudge_internal
+docker network create --internal domserver_internal
