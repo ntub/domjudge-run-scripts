@@ -7,10 +7,11 @@ INDEX=$1
 
 # Judgehost
 docker run -it -d \
+  --restart always \
   --privileged \
   --name judgehost_$INDEX \
-  --restart $DOCKER_RESTART \
-  --hostname judgehost-$INDEX \
+  --network domjudge \
+  --hostname judgehost \
   -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
   -e CONTAINER_TIMEZONE=$TIMEZONE \
   -e DAEMON_ID=$INDEX \
