@@ -14,4 +14,4 @@ docker run -it -d \
   -e MYSQL_DATABASE=$MYSQL_DATABASE \
   -v $MYSQL_DATA_PATH:/var/lib/mysql \
   -p 33066:3306 \
-  mariadb:${MARIADB_VERSION} --max-connections=$MYSQL_MAX_CONNECTIONS --max_allowed_packet=$MYSQL_MAX_ALLOWED_PACKET --innodb_log_file_size=$MYSQL_INNODB_LOG_FILE_SIZE
+  mariadb:$MARIADB_VERSION --max-connections=$MYSQL_MAX_CONNECTIONS --max_allowed_packet=$MYSQL_MAX_ALLOWED_PACKET --innodb_log_file_size=$MYSQL_INNODB_LOG_FILE_SIZE
