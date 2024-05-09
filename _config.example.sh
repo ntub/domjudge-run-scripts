@@ -1,16 +1,16 @@
 TIMEZONE="Asia/Taipei"
 
 # Config
-DOMSERVER_NAME="domjudge_domserver"
-JUDGEHOST_NAME="domjudge_judgehost"
-DATABASE_NAME="domjudge_database"
+DOMSERVER_NAME="domserver"
+JUDGEHOST_NAME="judgehost"
+DATABASE_NAME="domjudge_db"
 
 # Database config
 MYSQL_ROOT_PASSWORD="@@CHANGE_ME@@"
 MYSQL_USER="domjudge"
 MYSQL_PASSWORD="@@CHANGE_ME@@"
 MYSQL_DATABASE="domjudge"
-MYSQL_DATA_PATH="/opt/domjudge/database_data"
+MYSQL_DATA_PATH="domjudge_db_data"
 MYSQL_MAX_CONNECTIONS="1000"
 MYSQL_MAX_ALLOWED_PACKET="268435456"
 MYSQL_INNODB_LOG_FILE_SIZE="268435456"
