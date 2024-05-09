@@ -7,6 +7,7 @@ source "./_config.sh"
 docker run -it -d \
   --restart always \
   --network domjudge \
+  --network domjudge_internal \
   --name $DOMSERVER_NAME \
   -e CONTAINER_TIMEZONE=$TIMEZONE \
   -e MYSQL_HOST=$DATABASE_NAME \

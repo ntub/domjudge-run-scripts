@@ -10,7 +10,7 @@ docker run -it -d \
   --restart always \
   --privileged \
   --name judgehost_$INDEX \
-  --network domjudge \
+  --network domjudge_internal \
   --hostname judgehost \
   -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
   -e CONTAINER_TIMEZONE=$TIMEZONE \
