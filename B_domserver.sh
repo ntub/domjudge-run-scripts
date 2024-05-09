@@ -4,7 +4,7 @@ set -e
 source "./_config.sh"
 
 # Domserver
-docker run -it -d \
+docker run -d \
   --restart always \
   --network domjudge \
   --network domjudge_internal \

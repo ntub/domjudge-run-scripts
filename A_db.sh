@@ -4,7 +4,7 @@ set -e
 source "./_config.sh"
 
 # Database
-docker run -it -d \
+docker run -d \
   --restart always \
   --network domjudge \
   --name $DATABASE_NAME \

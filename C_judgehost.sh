@@ -6,7 +6,7 @@ source "./_config.sh"
 INDEX=$1
 
 # Judgehost
-docker run -it -d \
+docker run -d \
   --restart always \
   --privileged \
   --name judgehost_$INDEX \
