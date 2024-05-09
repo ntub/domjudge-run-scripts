@@ -12,7 +12,7 @@ docker run -d \
   --name judgehost_$INDEX \
   --network domjudge_internal \
   --hostname judgehost \
-  -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
+  -v /sys/fs/cgroup:/sys/fs/cgroup \
   -e CONTAINER_TIMEZONE=$TIMEZONE \
   -e DAEMON_ID=$INDEX \
   -e DOMSERVER_BASEURL=$DOMSERVER_BASEURL \
