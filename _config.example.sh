@@ -17,6 +17,7 @@ MYSQL_INNODB_LOG_FILE_SIZE="268435456"
 
 # Domserver config
 FPM_MAX_CHILDREN="40"
+DOMSERVER_DOMAIN="judge.example.com"
 
 # Judgehost config
 DOMSERVER_BASEURL="http://${DOMSERVER_NAME}/"

@@ -1,0 +1,19 @@
+http:
+  routers:
+    domserver:
+      entryPoints:
+        - websecure
+      rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
+      service: domserver
+      tls: {}
+
+  services:
+    domserver:
+      loadBalancer:
+        servers:
+          - url: http://domserver
+
+tls:
+  certificates:
+    - certFile: /etc/traefik/ssl/domserver.cert
+      keyFile: /etc/traefik/ssl/domserver.key

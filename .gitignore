@@ -1,2 +1,5 @@
 .DS_Store
 _config.sh
+
+ssl/*
+!ssl/.gitkeep
