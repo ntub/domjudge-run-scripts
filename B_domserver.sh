@@ -17,5 +17,5 @@ docker run -d \
   -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD \
   -e FPM_MAX_CHILDREN=$FPM_MAX_CHILDREN \
   -e TRUSTED_PROXIES=0.0.0.0/0 \
-  -p 80:80 \
+  $([[ "$DOMSERVER_EXPORT_PORT" -gt 0 ]] && echo "-p $DOMSERVER_EXPORT_PORT:80") \
   domjudge/domserver:$DOMJUDGE_VERSION
