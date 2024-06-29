@@ -1,0 +1,13 @@
+http:
+  routers:
+    domserver-http:
+      entryPoints:
+        - web
+      rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
+      service: domserver
+
+  services:
+    domserver:
+      loadBalancer:
+        servers:
+          - url: http://domserver
