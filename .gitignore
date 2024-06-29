@@ -3,3 +3,6 @@ _config.sh
 
 ssl/*
 !ssl/.gitkeep
+
+acme/*
+!acme/.gitkeep

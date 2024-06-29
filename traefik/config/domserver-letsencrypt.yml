@@ -1,0 +1,29 @@
+http:
+  routers:
+    domserver-http:
+      entryPoints:
+        - web
+      rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
+      service: domserver
+      middlewares:
+        - domserver-force-https
+
+    domserver-https:
+      entryPoints:
+        - websecure
+      rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
+      service: domserver
+      tls:
+        certResolver: letsEncrypt
+
+  middlewares:
+    domserver-force-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+
+  services:
+    domserver:
+      loadBalancer:
+        servers:
+          - url: http://domserver

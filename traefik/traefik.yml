@@ -16,3 +16,10 @@ entryPoints:
 providers:
   file:
     filename: /etc/traefik/config/domserver.yml
+
+certificatesResolvers:
+  letsEncrypt:
+    acme:
+      storage: /etc/traefik/acme/letsEncrypt.json
+      httpChallenge:
+        entryPoint: web
