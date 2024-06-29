@@ -8,7 +8,7 @@ docker run -d \
     --network domjudge \
     --name domjudge_rproxy \
     -v ./traefik/traefik.yml:/etc/traefik/traefik.yml:ro \
-    -v ./traefik/config/domserver.yml:/etc/traefik/config/domserver-$TRAEFIK_DOMSERVER_MODE.yml:ro \
+    -v ./traefik/config/domserver-$TRAEFIK_DOMSERVER_MODE.yml:/etc/traefik/config/domserver.yml:ro \
     -v ./traefik/ssl:/etc/traefik/ssl:ro \
     -p 80:80 \
     -p 443:443 \
