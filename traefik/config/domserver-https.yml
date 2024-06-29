@@ -1,13 +1,19 @@
 http:
   routers:
-    domserver:
+    domserver-http:
+      entryPoints:
+        - web
+      rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
+      service: domserver
+      middlewares:
+        - domserver-force-https
+
+    domserver-https:
       entryPoints:
         - websecure
       rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
       service: domserver
       tls: {}
-      middlewares:
-        - domserver-force-https
 
   middlewares:
     domserver-force-https:
