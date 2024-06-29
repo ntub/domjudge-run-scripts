@@ -1,8 +1,8 @@
 .DS_Store
 _config.sh
 
-ssl/*
-!ssl/.gitkeep
+traefik/ssl/*
+!traefik/ssl/.gitkeep
 
-acme/*
-!acme/.gitkeep
+traefik/acme/*
+!traefik/acme/.gitkeep
