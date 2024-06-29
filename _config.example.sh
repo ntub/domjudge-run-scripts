@@ -32,3 +32,7 @@ DOMJUDGE_VERSION=7.3.4
 # Port Config (0 to disable)
 DOMSERVER_EXPORT_PORT=0
 DB_EXPORT_PORT=0
+
+# Traefik
+TRAEFIK_VERSION=3.1
+TRAEFIK_DOMSERVER_MODE="http"  # http, https or letsencrypt

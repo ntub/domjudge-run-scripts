@@ -6,6 +6,14 @@ http:
       rule: Host(`{{ env "DOMSERVER_DOMAIN" }}`)
       service: domserver
       tls: {}
+      middlewares:
+        - domserver-force-https
+
+  middlewares:
+    domserver-force-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
 
   services:
     domserver:
