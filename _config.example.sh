@@ -36,3 +36,6 @@ DB_EXPORT_PORT=0
 # Traefik
 TRAEFIK_VERSION=3.1
 TRAEFIK_DOMSERVER_MODE="http"  # http, https or letsencrypt
+
+# Flag (0 to disable, 1 to enable)
+JUDGEHOST_USE_INTERNAL_NETWORK=1
