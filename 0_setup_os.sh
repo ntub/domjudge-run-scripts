@@ -10,4 +10,4 @@ echo 'RUN: reboot'
 echo 'RUN: cat /proc/cmdline'
 
 echo 'Install packages'
-sudo apt install -y vim htop tmux tree bash-completion ufw git
+sudo apt install -y vim htop tmux tree bash-completion ufw git netcat-openbsd iputils-ping
