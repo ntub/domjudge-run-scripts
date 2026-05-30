@@ -1,4 +1,8 @@
 :80 {
+    handle /_docs {
+        redir /_docs/
+    }
+
     handle_path /_docs/* {
         root * /docs
         file_server browse
