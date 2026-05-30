@@ -1,7 +1,5 @@
 :80 {
-    handle /_docs {
-        redir /_docs/
-    }
+    redir /_docs /_docs/
 
     handle_path /_docs/* {
         root * /docs
