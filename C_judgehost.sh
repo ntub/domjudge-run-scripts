@@ -4,7 +4,7 @@ set -euo pipefail
 # Load config from file
 source "./_config.sh"
 
-INDEX=$1
+INDEX="${1:?usage: C_judgehost.sh <index>}"
 
 # Judgehost
 docker run -d \
