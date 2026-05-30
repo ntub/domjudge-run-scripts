@@ -1,4 +1,5 @@
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
 echo '參考: https://www.domjudge.org/docs/manual/7.3/install-judgehost.html#linux-control-groups'
 echo '要注意對應的 DOMjudge 版本！'

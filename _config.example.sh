@@ -37,5 +37,8 @@ DB_EXPORT_PORT=0
 TRAEFIK_VERSION=3.1
 TRAEFIK_DOMSERVER_MODE="http"  # http, https or letsencrypt
 
+# Caddy
+CADDY_VERSION=2.11.3
+
 # Flag (0 to disable, 1 to enable)
 JUDGEHOST_USE_INTERNAL_NETWORK=1

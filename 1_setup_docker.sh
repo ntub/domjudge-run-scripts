@@ -1,7 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 # 推薦還是看官網啦 XD
 # https://docs.docker.com/engine/install/ubuntu/
-
-set -e
 
 echo "Cleanup"
 sudo apt-get remove docker docker-engine docker.io containerd runc || true

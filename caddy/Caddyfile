@@ -1,0 +1,10 @@
+:80 {
+    handle_path /_docs/* {
+        root * /docs
+        file_server browse
+    }
+
+    handle {
+        reverse_proxy http://domserver
+    }
+}
