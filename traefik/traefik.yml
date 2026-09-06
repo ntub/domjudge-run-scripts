@@ -9,9 +9,13 @@ accessLog: {}
 entryPoints:
   web:
     address: :80
+    http:
+      aliasHeadersStrategy: delete
 
   websecure:
     address: :443
+    http:
+      aliasHeadersStrategy: delete
 
 providers:
   file:
