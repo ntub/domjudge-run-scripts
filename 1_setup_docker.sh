@@ -1,33 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# 推薦還是看官網啦 XD
-# https://docs.docker.com/engine/install/ubuntu/
+# https://docs.docker.com/engine/install/ubuntu/#uninstall-old-versions
+echo "Uninstall old versions"
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+  sudo apt-get remove -y "$pkg" || true
+done
 
-echo "Cleanup"
-sudo apt-get remove docker docker-engine docker.io containerd runc || true
-
-echo "Pre-Setup"
-sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-
-echo "Add key"
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo \
-"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+# https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
 echo "Install docker"
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+sudo sh /tmp/get-docker.sh
+rm -f /tmp/get-docker.sh
 
 echo "Setup group"
-sudo usermod -a -G docker super
+sudo usermod -a -G docker "${SUDO_USER:-$USER}"
 
 echo "Setup services"
 sudo systemctl enable --now docker
+
+echo "Re-login (or run 'newgrp docker') to use docker without sudo"
