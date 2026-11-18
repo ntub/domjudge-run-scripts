@@ -27,7 +27,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 echo "Setup group"
-sudo usermod -a -G docker super
+sudo usermod -a -G docker "${SUDO_USER:-$USER}"
 
 echo "Setup services"
 sudo systemctl enable --now docker
