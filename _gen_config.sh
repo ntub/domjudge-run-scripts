@@ -21,9 +21,10 @@ umask 077
 sed \
   -e "s|^MYSQL_ROOT_PASSWORD=\"@@CHANGE_ME@@\"|MYSQL_ROOT_PASSWORD=\"$(gen_password)\"|" \
   -e "s|^MYSQL_PASSWORD=\"@@CHANGE_ME@@\"|MYSQL_PASSWORD=\"$(gen_password)\"|" \
+  -e "s|^JUDGEDAEMON_PASSWORD=\"@@CHANGE_ME@@\"|JUDGEDAEMON_PASSWORD=\"$(gen_password)\"|" \
   "$EXAMPLE" >"$TARGET"
 
 echo "Generated $TARGET (mode 600)."
 echo "TODO:"
 echo "  - Set DOMSERVER_DOMAIN / TRAEFIK_DOMSERVER_MODE if using Traefik"
-echo "  - After B_domserver.sh, run Z_get_user_info.sh and fill JUDGEDAEMON_PASSWORD"
+echo "  - After B_domserver.sh, set the 'judgehost' user's password in domserver to JUDGEDAEMON_PASSWORD"
